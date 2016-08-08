@@ -8,5 +8,5 @@ xhr.get(endpoint, function (err, data) {
   console.log(data.body)
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
-  target.innerHTML = greeting({name: 'Space'})
+  target.innerHTML = greeting({name: data.body.name, id: data.body.id})
 })
