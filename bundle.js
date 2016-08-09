@@ -2,7 +2,6 @@
 var xhr=require("xhr"),greeting=require("./views/greeting.hbs"),endpoint="https://api.wheretheiss.at/v1/satellites/25544";xhr.get(endpoint,function(e,n){e&&console.error(e),n=JSON.parse(n.body),console.log(n);var r=document.getElementsByTagName("main")[0];r.innerHTML=greeting({name:n.name,id:n.id})});
 },{"./views/greeting.hbs":29,"xhr":27}],2:[function(require,module,exports){
 function forEach(r,t,o){if(!isFunction(t))throw new TypeError("iterator must be a function");arguments.length<3&&(o=this),"[object Array]"===toString.call(r)?forEachArray(r,t,o):"string"==typeof r?forEachString(r,t,o):forEachObject(r,t,o)}function forEachArray(r,t,o){for(var n=0,a=r.length;n<a;n++)hasOwnProperty.call(r,n)&&t.call(o,r[n],n,r)}function forEachString(r,t,o){for(var n=0,a=r.length;n<a;n++)t.call(o,r.charAt(n),n,r)}function forEachObject(r,t,o){for(var n in r)hasOwnProperty.call(r,n)&&t.call(o,r[n],n,r)}var isFunction=require("is-function");module.exports=forEach;var toString=Object.prototype.toString,hasOwnProperty=Object.prototype.hasOwnProperty;
-
 },{"is-function":24}],3:[function(require,module,exports){
 (function (global){
 "undefined"!=typeof window?module.exports=window:"undefined"!=typeof global?module.exports=global:"undefined"!=typeof self?module.exports=self:module.exports={};
